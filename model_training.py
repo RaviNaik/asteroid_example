@@ -19,7 +19,7 @@ task = Task.init(
 )
 
 # Set default docker
-task.set_base_docker(docker_image="python:3.7")
+task.set_base_docker(docker_image="python:3.8")
 
 # Training args
 training_args = {

@@ -49,7 +49,7 @@ pipe = PipelineController(
     name=global_config.PIPELINE_NAME,
     project=global_config.PROJECT_NAME,
     version='0.0.1',
-    docker="python:3.7"
+    docker="python:3.8"
 )
 
 
