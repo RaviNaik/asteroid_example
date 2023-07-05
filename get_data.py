@@ -11,6 +11,9 @@ task = Task.init(
     reuse_last_task_id=False
 )
 
+# Set default docker
+task.set_base_docker(docker_image="python:3.7")
+
 config = {
     'query_date': '2022-01-01'
 }

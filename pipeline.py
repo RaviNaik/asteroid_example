@@ -48,8 +48,10 @@ def compare_metrics_and_publish_best(**kwargs):
 pipe = PipelineController(
     name=global_config.PIPELINE_NAME,
     project=global_config.PROJECT_NAME,
-    version='0.0.1'
+    version='0.0.1',
+    docker="python:3.7"
 )
+
 
 pipe.set_default_execution_queue('CPU Queue')
 pipe.add_parameter('training_seeds', [42, 420, 500])

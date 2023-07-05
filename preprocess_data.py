@@ -13,6 +13,9 @@ task = Task.init(
     reuse_last_task_id=False
 )
 
+# Set default docker
+task.set_base_docker(docker_image="python:3.7")
+
 # Create the folder we'll output the preprocessed data into
 preprocessed_data_folder = Path('/tmp')
 if not os.path.exists(preprocessed_data_folder):
