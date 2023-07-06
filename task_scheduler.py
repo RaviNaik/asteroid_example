@@ -11,16 +11,16 @@ scheduler = TaskScheduler(
 )
 
 # Get the task that we want to rerun
-task_to_schedule = Task.get_task(project_name='Project Team NASA', task_name='get data')
-# task_to_schedule = Task.get_task(task_id='2303bbd4c3284474a1b6545db8e2ee7f')
+# task_to_schedule = Task.get_task(project_name='Project Team NASA', task_name='get data')
+task_to_schedule = Task.get_task(task_id='b0732c334115432f8dc0cec0dbfdbdcb')
 
 # Add the scheduler based on task above and override current date to get newest data
 scheduler.add_task(
     schedule_task_id=task_to_schedule.id,
     queue='services',
-    hour=8,
-    minute=30,
-    weekdays=['friday'],
+    # hour=8,
+    minute=4,
+    # weekdays=['friday'],
     execute_immediately=True,
     task_parameters={'Args/query_date': datetime.today().strftime('%Y-%m-%d')}
 )
